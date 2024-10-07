@@ -11,7 +11,8 @@ function iterate_over_disc(start = 0, stop = 1, step = 0.1, phi = 0)
     start += step
     result = []
     for idx in start:step:stop
-        result = [result; [qubit_bloch_sphere(idx * 2 * pi, phi)]]
+        result = [result; [qubit_bloch_sphere(idx * pi, phi)]]
+        result = [result; [qubit_bloch_sphere(idx * pi, phi + pi)]]
         # println("Result:\n", result)
     end
     return result
